@@ -7,8 +7,57 @@ if table.find(poop, Exploit) then
     return Player:Kick("Nova | Executor is not supported by Nova.")
 end
 
-warn("thank you so much for using the script! - nova")
+warn("tysm for using the script! - nova")
 
+if game.PlaceId == 9908641400 then
+    if getconnections then
+        for _, v in next, getconnections(game:GetService("ScriptContext").Error) do
+            if v.Function then
+                v:Disable()
+            end
+        end
+    end
+
+    if hookfunction then
+        local Old; Old = hookfunction(game:GetService("LogService").GetLogHistory, function(...)
+            local Results = Old(...)
+            if #Results > 3 then
+                for i = #Results, 4, -1 do
+                    if type(Results[i]) == "table" and Results[i].messageType == Enum.MessageType.MessageError then
+                        table.remove(Results, i)
+                    end
+                end
+            end
+            return Results
+        end)
+
+        local function findUpvalue(func, value)
+            for _, upval in debug.getupvalues(func) do
+                if upval == value then
+                    return true
+                end
+            end
+            return false
+        end
+
+        local heartbeat = game:GetService("RunService").Heartbeat
+        local dummy = Instance.new("BindableEvent")
+
+        for _, func in getgc() do
+            if typeof(func) == "function" and islclosure(func) then
+                if findUpvalue(func, heartbeat) then
+                    for i, v in getupvalues(func) do
+                        if v == heartbeat then
+                            setupvalue(func, i, dummy.Event)
+                        elseif v == heartbeat.Connect then
+                            setupvalue(func, i, dummy.Event.Wait)
+                        end
+                    end
+                end
+            end
+        end
+    end
+end
 -- special games + defauly
 local gameid = game.GameId
 
