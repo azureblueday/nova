@@ -1,18 +1,4 @@
-local Exploit = identifyexecutor()
-local Player = game:GetService("Players").LocalPlayer
-
-if Exploit == "Xeno" and game.GameId ~= 9908641400 then
-    Player:Kick("Nova | Unsupported Executor")
-elseif Exploit == "Xeno" and game.GameId == 9908641400 then
-    loadstring(game:HttpGet("https://api.luarmor.net/files/v4/loaders/e8a512ea02aa7f12332fd74066499f05.lua"))() -- ff3 xeno
-end
-if Exploit == "Solara" and game.GameId ~= 9908641400 then
-    Player:Kick("Nova | Unsupported Executor")
-elseif Exploit == "Solara" and game.GameId == 9908641400 then
-    loadstring(game:HttpGet("https://api.luarmor.net/files/v4/loaders/e8a512ea02aa7f12332fd74066499f05.lua"))() -- ff3 xeno
-end
-warn("tysm for using the script! - nova")
-
+local shit = game.GameId == 9908641400
 if game.GameId == 9908641400 then
     if getconnections then
         for _, v in next, getconnections(game:GetService("ScriptContext").Error) do
@@ -62,15 +48,26 @@ if game.GameId == 9908641400 then
         end
     end
 end
--- special games + defauly
-local gameid = game.GameId
+if (not hookfunction or not hookmetamethod) and not shit then
+    game:GetService("Players").LocalPlayer:Kick('Nova | Unsupported Executor!')
+    return
+end
 
-if gameid == 9908641400 then
-    loadstring(game:HttpGet("https://api.luarmor.net/files/v4/loaders/ad427b543b86b73fbc2a007ece7b358d.lua"))() -- ff3
-elseif gameid == 184199275 then
-    loadstring(game:HttpGet("https://api.luarmor.net/files/v4/loaders/ceb81d950c4857a7a1a04b8c84d80dd9.lua"))() -- uf
-elseif gameid == 6505338302 then
-    loadstring(game:HttpGet("https://api.luarmor.net/files/v4/loaders/c0b57bb9a7378ad6dc21e2f43587a18f.lua"))() -- fbl
+if not script_key then
+	game:GetService("Players").LocalPlayer:Kick("Nova | Please make sure you include the script_key part ABOVE the loadstring, otherwise Luarmor will not be able to recognize that you bought.")
+	return
+end
+
+if game.GameId == 9908641400 then
+     if hookfunction and hookmetamethod then
+	loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/ad427b543b86b73fbc2a007ece7b358d.lua"))()
+     else
+	loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/e8a512ea02aa7f12332fd74066499f05.lua"))()
+     end -- FF3
+elseif game.GameId == 6505338302 then
+     loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/c0b57bb9a7378ad6dc21e2f43587a18f.lua"))() -- Football Legends2
+elseif game.GameId == 184199275 then
+      loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/ceb81d950c4857a7a1a04b8c84d80dd9.lua"))() -- Universe Football
 else
-    loadstring(game:HttpGet("https://api.luarmor.net/files/v4/loaders/2259faaddfcaa0d5acb74e84b2cd96b5.lua"))() -- defaulr
+     loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/ceb81d950c4857a7a1a04b8c84d80dd9.lua"))() -- Main
 end
