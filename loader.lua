@@ -1,15 +1,19 @@
 local Exploit = identifyexecutor()
 local Player = game:GetService("Players").LocalPlayer
 
-local poop = { "Solara", "Xeno" }
-
-if table.find(poop, Exploit) then
-    return Player:Kick("Nova | Executor is not supported by Nova.")
+if Exploit == "Xeno" and game.GameId ~= 9908641400 then
+    Player:Kick("Nova | Unsupported Executor")
+elseif game.GameId == 9908641400 then
+    loadstring(game:HttpGet("https://api.luarmor.net/files/v4/loaders/e8a512ea02aa7f12332fd74066499f05.lua"))() -- ff3 xeno
 end
-
+if Exploit == "Solara" and game.GameId ~= 9908641400 then
+    Player:Kick("Nova | Unsupported Executor")
+elseif game.GameId == 9908641400 then
+    loadstring(game:HttpGet("https://api.luarmor.net/files/v4/loaders/e8a512ea02aa7f12332fd74066499f05.lua"))() -- ff3 xeno
+end
 warn("tysm for using the script! - nova")
 
-if game.PlaceId == 9908641400 then
+if game.GameId == 9908641400 then
     if getconnections then
         for _, v in next, getconnections(game:GetService("ScriptContext").Error) do
             if v.Function then
