@@ -69,5 +69,5 @@ elseif game.GameId == 6505338302 then
 elseif game.GameId == 184199275 then
       loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/ceb81d950c4857a7a1a04b8c84d80dd9.lua"))() -- Universe Football
 else
-     loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/ceb81d950c4857a7a1a04b8c84d80dd9.lua"))() -- Main
+     loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/2259faaddfcaa0d5acb74e84b2cd96b5.lua"))() -- Main
 end
