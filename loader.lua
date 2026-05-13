@@ -38,7 +38,7 @@ if game.GameId == 9908641400 then
     if identifyexecutor() ~= "Xeno" and identifyexecutor() ~= "Solara" then
         loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/ad427b543b86b73fbc2a007ece7b358d.lua"))()
     else
-        loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/e8a512ea02aa7f12332fd74066499f05.lua"))()
+        game:GetService("Players").LocalPlayer:Kick("dont use shitty 30% sUNC executors and expect it to work")
     end
 elseif game.GameId == 6505338302 then
     loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/c0b57bb9a7378ad6dc21e2f43587a18f.lua"))() -- Football Legends
