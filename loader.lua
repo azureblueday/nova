@@ -19,6 +19,8 @@ elseif game.GameId == 184199275 then
     loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/ceb81d950c4857a7a1a04b8c84d80dd9.lua"))() -- Universe Football
 elseif game.GameId == 5113572498 then
     loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/73482993c40862f621e0df5249a6260c.lua"))() -- College Football
+elseif game.GameId == 3032132418 then
+    loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/23fc12cda6515f241e7a3c0f863a2bb4.lua"))() -- HCBB
 else
     loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/2259faaddfcaa0d5acb74e84b2cd96b5.lua"))() -- Main
 end
