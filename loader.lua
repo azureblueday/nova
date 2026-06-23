@@ -8,7 +8,7 @@ if not script_key then
     return
 end
 if game.GameId == 9908641400 then
-    if identifyexecutor() ~= "Xeno" and identifyexecutor() ~= "Solara" and identifyexecutor() ~= "Seliware" then
+    if identifyexecutor() ~= "Xeno" and identifyexecutor() ~= "Solara" and identifyexecutor() ~= "Seliware" and identifyexecutor() ~= "Volt" then
         loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/ad427b543b86b73fbc2a007ece7b358d.lua"))() -- Football Fusion 3
     else
         loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/ebf35a3f64beaa6be88055993bb074fc.lua"))() -- Football Fusion 3 (B-Side Script)
