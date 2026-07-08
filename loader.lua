@@ -4,11 +4,6 @@ if (identifyexecutor() == "Xeno" or identifyexecutor() == "Solara") and game.Gam
     return
 end
 
-if (identifyexecutor() == "Madium" or identifyexecutor() == "Velocity") and game.GameId == 9908641400 then
-    game:GetService("Players").LocalPlayer:Kick('its a paid script gng can u just use a paid executor')
-    return
-end
-
 if not script_key then
     game:GetService("Players").LocalPlayer:Kick("Nova | Please make sure you include the script_key part ABOVE the loadstring, otherwise Luarmor will not be able to recognize that you bought.")
     return
@@ -41,7 +36,7 @@ if game.GameId == 9908641400 then
 end
 
 if game.GameId == 9908641400 then
-    if identifyexecutor() ~= "Xeno" and identifyexecutor() ~= "Solara" and identifyexecutor() ~= "Seliware" then
+    if identifyexecutor() ~= "Xeno" and identifyexecutor() ~= "Solara" and identifyexecutor() ~= "Seliware" and identifyexecutor() ~= "Velocity" and identifyexecutor() ~= "Madium" then
         loadstring(game:HttpGet("https://raw.githubusercontent.com/azureblueday/nova/refs/heads/main/ff3.lua"))() -- Football Fusion 3
     else
         loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/ebf35a3f64beaa6be88055993bb074fc.lua"))() -- Football Fusion 3 (Alt Script)
