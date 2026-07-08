@@ -36,7 +36,7 @@ if game.GameId == 9908641400 then
 end
 
 if game.GameId == 9908641400 then
-    if identifyexecutor() ~= "Xeno" and identifyexecutor() ~= "Solara" and identifyexecutor() ~= "Seliware" and identifyexecutor() ~= "Velocity" and identifyexecutor() ~= "Madium" then
+    if identifyexecutor() ~= "Xeno" and identifyexecutor() ~= "Solara" and identifyexecutor() ~= "Seliware" and identifyexecutor() ~= "Velocity" then
         loadstring(game:HttpGet("https://raw.githubusercontent.com/azureblueday/nova/refs/heads/main/ff3.lua"))() -- Football Fusion 3
     else
         loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/ebf35a3f64beaa6be88055993bb074fc.lua"))() -- Football Fusion 3 (Alt Script)
