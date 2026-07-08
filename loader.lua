@@ -3,6 +3,12 @@ if (identifyexecutor() == "Xeno" or identifyexecutor() == "Solara") and game.Gam
     game:GetService("Players").LocalPlayer:Kick('Nova | Unsupported Executor!')
     return
 end
+
+if (identifyexecutor() == "Xeno" or identifyexecutor() == "Solara") and game.GameId == 9908641400 then
+    game:GetService("Players").LocalPlayer:Kick('its a paid script gng can u just use a paid executor')
+    return
+end
+
 if not script_key then
     game:GetService("Players").LocalPlayer:Kick("Nova | Please make sure you include the script_key part ABOVE the loadstring, otherwise Luarmor will not be able to recognize that you bought.")
     return
