@@ -7,11 +7,38 @@ if not script_key then
     game:GetService("Players").LocalPlayer:Kick("Nova | Please make sure you include the script_key part ABOVE the loadstring, otherwise Luarmor will not be able to recognize that you bought.")
     return
 end
+
+if game.GameId == 9908641400 then
+    if getconnections then
+        for i,v in next, getconnections(game:GetService("ScriptContext").Error) do
+            if v.Function then
+                v:Disable()
+            end
+        end
+    end
+
+    if hookfunction then
+        local Old; Old = hookfunction(game:GetService("LogService").GetLogHistory, function(...)
+            local Results = Old(...);
+
+            if #Results > 3 then
+                for i = 4, #Results do
+                    if type(Results[i]) == "table" and Results[i].messageType == Enum.MessageType.MessageError then
+                        table.remove(Results, i);
+                    end
+                end
+            end
+
+            return Results
+        end)
+    end
+end
+
 if game.GameId == 9908641400 then
     if identifyexecutor() ~= "Xeno" and identifyexecutor() ~= "Solara" and identifyexecutor() ~= "Seliware" then
-        loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/ad427b543b86b73fbc2a007ece7b358d.lua"))() -- Football Fusion 3
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/azureblueday/nova/refs/heads/main/ff3.lua"))() -- Football Fusion 3
     else
-        loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/ebf35a3f64beaa6be88055993bb074fc.lua"))() -- Football Fusion 3 (B-Side Script)
+        loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/ebf35a3f64beaa6be88055993bb074fc.lua"))() -- Football Fusion 3 (Alt Script)
     end
 elseif game.GameId == 6505338302 then
     loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/c0b57bb9a7378ad6dc21e2f43587a18f.lua"))() -- Football Legends
