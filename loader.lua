@@ -4,7 +4,7 @@ if (identifyexecutor() == "Xeno" or identifyexecutor() == "Solara") and game.Gam
     return
 end
 
-if (identifyexecutor() == "Xeno" or identifyexecutor() == "Solara") and game.GameId == 9908641400 then
+if (identifyexecutor() == "Madium" or identifyexecutor() == "Velocity") and game.GameId == 9908641400 then
     game:GetService("Players").LocalPlayer:Kick('its a paid script gng can u just use a paid executor')
     return
 end
