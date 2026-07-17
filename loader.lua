@@ -1,23 +1,42 @@
+local plrs = game:GetService("Players")
+local plr = plrs.LocalPlayer
+local exec = identifyexecutor()
 
-if (identifyexecutor() == "Xeno" or identifyexecutor() == "Solara") and game.GameId ~= 9908641400 then
-    game:GetService("Players").LocalPlayer:Kick('Nova | Unsupported Executor!')
+script_key = key
+
+local ff3 = 9908641400
+local blocked = { Xeno = true, Solara = true }
+local ff3Alt = { Xeno = true, Solara = true, Seliware = true, Velocity = true }
+
+if blocked[exec] and game.GameId ~= ff3 then
+    plr:Kick("Nova | Unsupported Executor!")
     return
 end
 
-if game.GameId == 9908641400 then
-    if identifyexecutor() ~= "Xeno" and identifyexecutor() ~= "Solara" and identifyexecutor() ~= "Seliware" and identifyexecutor() ~= "Velocity" and identifyexecutor() ~= "Real" then
-        loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/ad427b543b86b73fbc2a007ece7b358d.lua"))() -- Football Fusion 3
-    else
-        loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/ebf35a3f64beaa6be88055993bb074fc.lua"))() -- Football Fusion 3 (Alt Script)
-    end
-elseif game.GameId == 6505338302 then
-    loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/c0b57bb9a7378ad6dc21e2f43587a18f.lua"))() -- Football Legends
-elseif game.GameId == 184199275 then
-    loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/ceb81d950c4857a7a1a04b8c84d80dd9.lua"))() -- Universe Football
-elseif game.GameId == 5113572498 then
-    loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/73482993c40862f621e0df5249a6260c.lua"))() -- College Football
-elseif game.GameId == 3032132418 then
-    game:GetService("Players").LocalPlayer:Kick('Nova | HCBB is Offline!') -- HCBB
+local games = {
+    [ff3] = function()
+        local url = ff3Alt[exec]
+            and "https://cdn.snc.dev/699a6a716315fba25b2e51cc/c5jhvhjlafq"
+            or "https://cdn.snc.dev/699a6a716315fba25b2e51cc/2nhqc7kru9k"
+        loadstring(game:HttpGet(url))()
+    end,
+    [6505338302] = function()
+        loadstring(game:HttpGet("https://cdn.snc.dev/699a6a716315fba25b2e51cc/t9cm7klxb2"))()
+    end,
+    [184199275] = function()
+        loadstring(game:HttpGet("https://cdn.snc.dev/699a6a716315fba25b2e51cc/g0mie4ouq4"))()
+    end,
+    [5113572498] = function()
+        loadstring(game:HttpGet("https://cdn.snc.dev/699a6a716315fba25b2e51cc/je1pjrb4mhg"))()
+    end,
+    [3032132418] = function()
+        plr:Kick("Nova | HCBB is Offline!")
+    end,
+}
+
+local run = games[game.GameId]
+if run then
+    run()
 else
-    loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/2259faaddfcaa0d5acb74e84b2cd96b5.lua"))() -- Main
+    loadstring(game:HttpGet("https://cdn.snc.dev/699a6a716315fba25b2e51cc/fay21lfcd2n"))()
 end
