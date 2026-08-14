@@ -47,6 +47,12 @@ local games = {
     [3032132418] = function() -- hcbb
         plr:Kick("Nova | HCBB is Offline!")
     end,
+    [73885730] = function() -- prison life
+        load("https://api.luarmor.net/files/v4/loaders/f1e884f9203bf01df7741218b2973238.lua")
+    end,
+    [7633926880] = function() -- bloxstrike
+        load("https://api.luarmor.net/files/v4/loaders/ae8ea6dbf229231a3b4ddc503cdd3052.lua")
+    end,
 }
 
 local partOf = {
