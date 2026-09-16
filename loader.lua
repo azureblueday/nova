@@ -4,8 +4,13 @@ local exec = identifyexecutor()
 
 local blocked = { Xeno = true, Solara = true }
 
-if blocked[exec] and game.GameId ~= ff3 then
+if blocked[exec] then
     plr:Kick("Nova | Unsupported Executor!")
+    return
+end
+
+if exec == "Wave" and game.GameId == 9908641400 then
+    plr:Kick("Please do not use Wave for FF3!")
     return
 end
 
